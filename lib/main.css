@@ -1,0 +1,197 @@
+html,
+body,
+#map {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#map {
+  width: 100vw;
+  height: 100vh;
+}
+#floating-menu {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  z-index: 1000;
+  width: 300px;
+}
+#floating-menu .coords {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.1rem;
+  color: #1976d2;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  background: #f5f7fa;
+  border-radius: 8px;
+  padding: 4px 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+#floating-menu button {
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+#floating-menu button:hover {
+  background: #1565c0;
+}
+#center-marker {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: #1976d2;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1100;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+#settings-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+#settings-modal.active {
+  display: flex;
+}
+#settings-modal .modal-content {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 24px 24px 24px;
+  min-width: 320px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
+}
+#settings-modal label {
+  font-size: 1rem;
+  color: #1976d2;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+#settings-modal .modal-content > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#settings-modal input[type="text"],
+#settings-modal input[type="number"] {
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #b0bec5;
+  margin-bottom: 0;
+  background: #f5f7fa;
+  color: #1976d2;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  outline: none;
+  transition: border 0.2s;
+}
+#settings-modal input[type="text"]:focus,
+#settings-modal input[type="number"]:focus {
+  border: 1.5px solid #1976d2;
+  background: #e3f2fd;
+}
+#settings-modal button {
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+  margin-top: 6px;
+}
+#settings-modal #set-current-center {
+  background: #1976d2;
+}
+#settings-modal #set-current-center:hover {
+  background: #1565c0;
+}
+#settings-modal #save-respawn {
+  background: #388e3c;
+}
+#settings-modal #save-respawn:hover {
+  background: #2e7d32;
+}
+#settings-modal #close-settings {
+  background: #b0bec5;
+  color: #333;
+}
+#settings-modal #close-settings:hover {
+  background: #90a4ae;
+}
+#settings-modal .respawn-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.respawn-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f5f7fa;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 0.98rem;
+  color: #1976d2;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+.respawn-item.selected {
+  border: 2px solid #1976d2;
+  background: #e3f2fd;
+}
+.respawn-item input[type="radio"] {
+  accent-color: #1976d2;
+}
+.respawn-item .respawn-name {
+  font-weight: bold;
+  color: #1976d2;
+  margin-right: 8px;
+}
+.respawn-item .respawn-coords {
+  font-size: 0.95em;
+  color: #333;
+}
+.respawn-item .delete-respawn {
+  background: #e57373;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 0.9rem;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  max-width: 4rem;
+  width: auto;
+}
+.respawn-item .delete-respawn:hover {
+  background: #c62828;
+}

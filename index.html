@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>respawn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
+    <script src="./lib/main.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="./lib/main.css">
+</head>
+
+<body>
+    <div id="map"></div>
+    <div id="center-marker">＋</div>
+    <div id="floating-menu">
+        <div class="coords" id="center-coords">(35.681236, 139.767125)</div>
+        <button id="floating-menu-locate" style="background-color: #1565c0;">現在地の取得</button>
+        <button id="floating-menu-share" style="background-color: #000000;">Share With X</button>
+        <button id="floating-menu-settings" style="background-color: gray;">設定</button>
+    </div>
+    <div id="settings-modal" style="display: none;">
+        <div class="modal-content">
+            <h2>リスポーン地点の設定</h2>
+            <div style="margin-bottom: 1em;">
+                <label>リスポーン地点（緯度, 経度）:</label>
+                <div id="respawn-list" class="respawn-list"></div>
+                <input type="text" id="respawn-name" placeholder="リスポーン地点の名前" />
+                <input id="respawn-lat" type="number" step="any" />
+                <input id="respawn-lng" type="number" step="any" />
+                <button id="set-current-center">現在の中心をセット</button>
+            </div>
+            <h2>座標計算設定</h2>
+            <div style="margin-bottom: 1em;">
+                <input type="text" id="coord-pre" placeholder="有効精度桁数（デフォルト: 3）">
+                <input type="text" id="coord-exp" placeholder="座標冪乗（デフォルト: 3）">
+            </div>
+            <div style="text-align: right;">
+                <button id="save-respawn">保存</button>
+                <button id="close-settings">閉じる</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
